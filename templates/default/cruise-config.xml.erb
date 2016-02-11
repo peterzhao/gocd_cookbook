@@ -1,54 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cruise xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cruise-config.xsd" schemaVersion="75">
   <server artifactsdir="artifacts" commandRepositoryLocation="default" serverId="f2c1839c-e0eb-4a69-a83b-65a7f6633f58"  agentAutoRegisterKey="<%= node['go']['autoregister_key'] %>"/>
-  <pipelines group="cf-deployer">
-    <pipeline name="cf-deployer">
-      <materials>
-        <git url="https://github.com/peterzhao/cf_deployer.git" />
-      </materials>
-      <stage name="build">
-        <jobs>
-          <job name="build">
-            <tasks>
-              <exec command="bash">
-                <arg>-c</arg>
-                <arg>echo 'hi'</arg>
-                <runif status="passed" />
-              </exec>
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-    </pipeline>
-    <pipeline name="foo" isLocked="false">
-      <materials>
-        <pipeline pipelineName="cf-deployer" stageName="build" />
-      </materials>
-      <stage name="build">
-        <jobs>
-          <job name="build">
-            <tasks>
-              <exec command="bash">
-                <arg>-c</arg>
-                <arg>echo 'hi'</arg>
-              </exec>
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-      <stage name="deploy">
-        <jobs>
-          <job name="deploy">
-            <tasks>
-              <exec command="bash">
-                <arg>-c</arg>
-                <arg>echo 'deployed'</arg>
-              </exec>
-            </tasks>
-          </job>
-        </jobs>
-      </stage>
-    </pipeline>
-  </pipelines>
 </cruise>
 
