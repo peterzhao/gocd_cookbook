@@ -11,9 +11,9 @@ user 'go' do
 end
 
 
-{ 'java-1.7.0-openjdk-devel' => '1.7.0.85-2.6.1.3.el6_6',
-  'go-server' => '15.2.0-2248', 
-  'go-agent' => '15.2.0-2248' }.each do |package_name, version|
+{ node['java']['package'] => node['java']['version'], 
+  'go-server' => node['go']['version'],
+  'go-agent' => node['go']['version'] }.each do |package_name, version|
   package package_name do
     version version
   end

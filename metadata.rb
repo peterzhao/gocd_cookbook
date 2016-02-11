@@ -1,4 +1,4 @@
-name             'go'
+name             'gocd_cookbook'
 maintainer       'Peter Zhao'
 maintainer_email ''
 license          'All rights reserved'
