@@ -1,0 +1,5 @@
+[go-cd]
+name=GoCD YUM Repository
+baseurl=http://dl.bintray.com/gocd/gocd-rpm
+enabled=1
+gpgcheck=0
